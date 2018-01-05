@@ -1,0 +1,14 @@
+vich_uploader:
+    db_driver: orm
+    storage: flysystem
+
+    mappings:
+        media:
+            uri_prefix: /media/temp
+            upload_destination: 'local.temp'
+            namer: "App\\Upload\\FileNamer"
+        thumbnails:
+            uri_prefix: /media/thumbz
+            upload_destination: 'local.thumbz'
+            namer: "App\\Upload\\FileNamer"
+

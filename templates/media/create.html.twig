@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% import 'macros/dropzone.macro.html.twig' as dropzone %}
+
+{% block body %}
+    <h1>Create media</h1>
+    <div class="container">
+        {{ dropzone.input(path('josmanoa_media_upload', {'uploadId': uploadId})) }}
+        {{ form_start(form) }}
+            <div class="row">
+                <div class="col-md-12">{{ form_row(form.albums) }}</div>
+                <div class="col-md-12">
+                    <div class="input-group input-daterange">
+                        <div class="input-group-addon">between</div>
+                        {{ form_widget(form.dateFrom) }}
+                        <div class="input-group-addon">and</div>
+                        {{ form_widget(form.dateTo) }}
+                    </div>
+                </div>
+                <div class="col-md-12">{{ form_row(form.coordinates) }}</div>
+                <div class="col-md-12 text-right">{{ form_row(form.submit) }}</div>
+            </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIspdDtxwwTF2CJ1xtyTWMNrvJycDckqo&libraries=places"></script>
+    <script src="{{ asset('build/js/dropzone.js') }}"></script>
+    <script src="{{ asset('build/js/media.js') }}"></script>
+{% endblock javascripts %}

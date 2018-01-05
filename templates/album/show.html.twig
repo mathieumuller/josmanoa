@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/css/lightgallery.css') }}">
+{% endblock %}
+
+{% block body %}
+    <h1>Show album {{ album.name }}</h1>
+    {% set cover = album.cover.id|default %}
+    <div class="col text-center" id="lightgallery">
+        {% for media in album.medias %}
+            {% set isAlbumCover = cover == media.id %}
+            <div class="card media-card bg-dark border text-center {% if isAlbumCover %}media-album-cover{% endif %}" id="{{ media.id }}">
+                <div class="card-body lg-select media-thumb-wrapper " data-src="{{media|media_path}}">
+                    <img class="img-thumbnail" src="{{ media|thumb_path('s') }}" alt="{{ media.description }}"/>
+                </div>
+                <div class="card-footer text-muted">
+                    {% include 'media/media-actions.inc.html.twig' %}
+                </div>
+            </div>
+        {% else %}
+            <div class="alert alert-info">Empty album</div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('build/js/lightgallery.js') }}"></script>
+    <script src="{{ asset('build/js/album.js') }}"></script>
+{% endblock javascripts %}

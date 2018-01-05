@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+{% endblock stylesheets %}
+
+{% block body %}
+    <div class="row">
+        {% for album in albums %}
+            <a href="{{ path('josmanoa_show_album', {'id': album.id}) }}" class="unstyled-link">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="album-cover text-center table-cell align-middle">
+                            {% if album.cover %}
+                                <img class="card-img-top" src="{{ album.cover|thumb_path('m') }}" alt="{{ album }}">
+                            {% else %}
+                                <img src="{{ asset('folder-image-icon.png', 'img') }}" alt="failed">
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <span class="album-name">{{ album }}</span>
+                            <p class="album-description">{{ album.descriptionOrDefault }}</p>
+                        </p>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+{% endblock %}

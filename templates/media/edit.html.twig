@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% set media = form.vars.value %}
+    <h1>Edit media</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-s-12">
+                <div class="card">
+                    <img class="card-img-top" src="{{ media|media_path }}" alt="{{ media.name }}">
+                    <div class="card-body">
+                        <p class="card-text">
+                            <h3>{{ media.name|default(media.filename) }} <small class="float-right text-default">{{ media.date|date('d/m/Y') }}</small></h3>
+                            <p>{{ media.description }}</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-s-12">
+                {{ form_start(form) }}
+                    <div class="col-12">{{ form_row(form.name) }}</div>
+                    <div class="col-12">{{ form_row(form.description) }}</div>
+                    <div class="col-12">{{ form_row(form.albums) }}</div>
+                    <div class="col-12">
+                        {{ form_widget(form.date) }}
+                    </div>
+                    {% if media.isPortrait %}
+                        <div class="col-12">
+                            {{ form_row(form.coordinates) }}
+                            {{ form_end(form) }}
+                        </div>
+                    {% endif %}
+            </div>
+            {% if media.isLandscape %}
+                <div class="col-12">
+                    {{ form_row(form.coordinates) }}
+                    {{ form_end(form) }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIspdDtxwwTF2CJ1xtyTWMNrvJycDckqo&libraries=places"></script>
+    <script src="{{ asset('build/js/media.js') }}"></script>
+{% endblock javascripts %}

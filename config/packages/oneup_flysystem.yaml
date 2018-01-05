@@ -1,0 +1,29 @@
+oneup_flysystem:
+    adapters:
+        aws.flysystem_adapter:
+            awss3v3:
+                client: app.s3_client
+                bucket: "josmanoa.dev"
+                prefix: "josmanoa"
+
+        local.temp.flysystem_adapter:
+            local:
+                directory: "%kernel.project_dir%/public/media/temp"
+        local.thumbz.flysystem_adapter:
+            local:
+                directory: "%kernel.project_dir%/public/media/thumbz"
+
+    filesystems:
+        aws:
+            adapter: aws.flysystem_adapter
+            visibility: public
+
+        local.temp:
+            adapter: local.temp.flysystem_adapter
+            mount: "local.temp"
+            visibility: public
+
+        local.thumbz:
+            adapter: local.thumbz.flysystem_adapter
+            mount: "local.thumbz"
+            visibility: public

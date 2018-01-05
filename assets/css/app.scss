@@ -1,0 +1,40 @@
+/* include bootstrap */
+@import '~bootstrap/scss/bootstrap';
+@import '~bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css';
+@import '~dropzone/dist/min/dropzone.min.css';
+@import '~select2/dist/css/select2.min.css';
+@import '~toastr/toastr.scss';
+
+.album-cover {
+    height: 300px;
+    width: 300px;
+}
+
+.media-album-cover .img-thumbnail {
+    background: red;
+}
+
+.album-name {
+    font-family: "Bree Serif", serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.album-description {
+    color: grey;
+}
+
+a.unstyled-link {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.media-thumb-wrapper {
+    cursor: pointer;
+}
+
+.media-card {
+    display: inline-block;
+    margin-bottom: 5px;
+}

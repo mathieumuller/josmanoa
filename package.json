@@ -1,0 +1,31 @@
+{
+    "devDependencies": {
+        "@symfony/webpack-encore": "^0.17.0",
+        "bootstrap": "4.0.0-beta.2",
+        "bootstrap-datepicker": "^1.7.1",
+        "bootstrap-sass": "^3.3.7",
+        "jquery": "^3.2.1",
+        "lg-autoplay": "^1.0.4",
+        "lg-fullscreen": "^1.0.1",
+        "lg-share": "^1.1.0",
+        "lg-zoom": "^1.1.0",
+        "lightgallery": "^1.6.6",
+        "node-sass": "^4.7.2",
+        "popper.js": "1.13.0",
+        "sass-loader": "^6.0.6",
+        "select2": "^4.0.6-rc.1",
+        "tether": "^1.4.3",
+        "toastr": "^2.1.4"
+    },
+    "license": "UNLICENSED",
+    "private": true,
+    "scripts": {
+        "dev-server": "encore dev-server",
+        "dev": "encore dev",
+        "watch": "encore dev --watch",
+        "build": "encore production"
+    },
+    "dependencies": {
+        "dropzone": "^5.2.0"
+    }
+}

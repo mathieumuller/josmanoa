@@ -1,0 +1,7 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% for media in medias %}
+        <div>{{ media.name }}</div>
+    {% endfor %}
+{% endblock %}

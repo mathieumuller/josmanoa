@@ -1,0 +1,21 @@
+<div class='text-center'>
+    <div class="btn-group">
+        <button class="btn btn-xs btn-outline-info btn-album-cover"
+            data-url="{{ path('josmanoa_change_album_cover', {'media_id': media.id, 'album_id': album.id}) }}"
+            {% if isAlbumCover %}disabled{% endif %}
+        >
+            <span data-toggle="tooltip" title="Utiliser comme couverture de l'album"><i class='fa fa-images'></i></span>
+        </button>
+        <a class="btn btn-xs btn-outline-primary"  href="{{ path('josmanoa_edit_media', {'id': media.id}) }}">
+            <span data-toggle="tooltip" title="Editer"><i class='fa fa-edit'></i></span>
+        </a>
+        <button class="btn btn-xs btn-outline-warning btn-album-remove-media"
+            data-url="{{ path('josmanoa_remove_from_album', {'media_id': media.id, 'album_id': album.id}) }}"
+        >
+            <span data-toggle="tooltip" title="Retirer de l'album"><i class='fa fa-eye-slash'></i></span>
+        </button>
+        <button class="btn btn-xs btn-outline-danger">
+            <span data-toggle="tooltip" title="Supprimer"><i class='fa fa-trash'></i></span>
+        </button>
+    </div>
+</div>
