@@ -18,7 +18,7 @@ class MediaUploadGroupType extends AbstractType
     {
         $builder
             ->add('coordinates', Type\GeocoderType::class, [
-                'label' => 'form.label.coordinates',
+                'label' => 'form.media_upload.coordinates',
             ])
             ->add('dateFrom', Type\DatepickerType::class, [
                 'label' => false,
@@ -26,17 +26,17 @@ class MediaUploadGroupType extends AbstractType
             ->add('dateTo', Type\DatepickerType::class, [
                 'label' => false,
             ])
-            ->add('uploadId', BaseType\HiddenType::class)
             ->add(
                 'albums',
                 EntityType::class,
                 [
                     'class' => 'App\\Entity\\Album',
-                    'label' => 'form.label.album',
+                    'label' => 'form.media_upload.album',
                     'multiple' => true,
                     'attr' => ['class' => 'select2'],
                 ]
             )
+            ->add('uploadId', BaseType\HiddenType::class)
             ->add('submit', BaseType\SubmitType::class)
         ;
     }

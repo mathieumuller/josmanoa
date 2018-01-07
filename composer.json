@@ -60,6 +60,7 @@
         "symfony/security-core": "v4.0.2",
         "symfony/security-csrf": "^4.0",
         "symfony/templating": "v4.0.1",
+        "symfony/translation": "^4.0",
         "symfony/twig-bundle": "4.0",
         "symfony/var-dumper": "^4.0",
         "symfony/web-profiler-bundle": "^4.0",

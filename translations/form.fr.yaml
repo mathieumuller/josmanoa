@@ -1,0 +1,11 @@
+form:
+    login:
+        actions:
+            sign_in: "Connexion"
+            logout: "Déconnexion"
+        username:
+            label: "Email"
+            placeholder: "exemple@email.com"
+        password:
+            label: "Mot de passe"
+            placeholder: "mot de passe"

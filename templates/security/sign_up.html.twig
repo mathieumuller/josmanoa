@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h1>Create acount</h1>
+    <div class="container">
+        {{ form(form) }}
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIspdDtxwwTF2CJ1xtyTWMNrvJycDckqo&libraries=places"></script>
+    <script src="{{ asset('build/js/dropzone.js') }}"></script>
+    <script src="{{ asset('build/js/media.js') }}"></script>
+{% endblock javascripts %}

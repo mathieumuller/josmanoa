@@ -18,23 +18,23 @@ class MediaType extends AbstractType
     {
         $builder
             ->add('name', BaseType\TextType::class, [
-                'label' => 'form.label.media.name',
+                'label' => 'form.media.name',
             ])
             ->add('description', BaseType\TextareaType::class, [
-                'label' => 'form.label.media.description',
+                'label' => 'form.media.description',
             ])
             ->add('coordinates', Type\GeocoderType::class, [
-                'label' => 'form.label.coordinates',
+                'label' => 'form.coordinates',
             ])
             ->add('date', Type\DatepickerType::class, [
-                'label' => 'form.label.media.date',
+                'label' => 'form.media.date',
             ])
             ->add(
                 'albums',
                 EntityType::class,
                 [
                     'class' => 'App\\Entity\\Album',
-                    'label' => 'form.label.album',
+                    'label' => 'form.media.albums',
                     'multiple' => true,
                     'attr' => ['class' => 'select2'],
                     'by_reference' => false,

@@ -5,6 +5,11 @@
 @import '~select2/dist/css/select2.min.css';
 @import '~toastr/toastr.scss';
 
+.site-title {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 2em;
+}
+
 .album-cover {
     height: 300px;
     width: 300px;
@@ -37,4 +42,9 @@ a.unstyled-link {
 .media-card {
     display: inline-block;
     margin-bottom: 5px;
+}
+
+.dropdown-menu-right {
+    right: 0;
+    left: auto;
 }

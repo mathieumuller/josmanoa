@@ -11,6 +11,7 @@ Encore
     .enableVersioning(Encore.isProduction())
 
     .addEntry('js/app', './assets/js/app.js')
+    .addEntry('js/login', './assets/js/login.js')
     .addEntry('js/media', './assets/js/media.js')
     .addEntry('js/album', './assets/js/album.js')
     .addEntry('js/dropzone', './assets/js/dropzone.js')
